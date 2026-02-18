@@ -1,0 +1,46 @@
+:root { 
+  --pink: #ffafcc; 
+  --blue: #a2d2ff; 
+  --dark: #495057; 
+  --grey: #f8f9fa;
+}
+
+body { 
+  font-family: 'Comic Sans MS', sans-serif; 
+  background: var(--grey); 
+  padding: 15px; 
+}
+
+.container { 
+  max-width: 1000px; 
+  margin: auto; 
+  background: white; 
+  padding: 20px; 
+  border-radius: 20px; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+}
+
+h1 { text-align: center; color: #ff85a1; margin-bottom: 5px; }
+.subtitle { text-align: center; color: #888; margin-bottom: 20px; font-size: 0.9em; }
+
+/* Botones */
+button#btnGenerar, button#btnDescargar { 
+  cursor: pointer; border: none; border-radius: 12px; width: 100%; 
+  padding: 15px; font-weight: bold; font-size: 1.1em; transition: 0.3s;
+  margin-bottom: 10px;
+}
+
+button#btnGenerar { background: var(--blue); color: #444; }
+button#btnDescargar { background: var(--dark); color: white; }
+
+button:active { transform: scale(0.98); }
+
+/* Grid de tarjetas */
+.grid-semana { 
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+  gap: 15px; margin-top: 20px; 
+  padding: 10px; /* Espacio para que la foto no salga cortada */
+}
+
+.dia-card { 
+  position: relative; border: 2px solid #f0f0f0; border-radius: 15px; 
