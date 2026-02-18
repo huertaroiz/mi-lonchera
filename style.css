@@ -3,24 +3,27 @@
   --blue: #a2d2ff; 
   --dark: #495057; 
   --grey: #f8f9fa;
+  --line-pink: #ff85a1;
 }
 
+/* 1. Fuente moderna y limpia como pediste */
 body { 
-  font-family: 'Comic Sans MS', sans-serif; 
+  font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; 
   background: var(--grey); 
   padding: 15px; 
+  color: var(--dark);
 }
 
 .container { 
-  max-width: 1000px; 
+  max-width: 1200px; /* Evita que se apachurre en Desktop */
   margin: auto; 
   background: white; 
-  padding: 20px; 
+  padding: 25px; 
   border-radius: 20px; 
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+  box-shadow: 0 5px 25px rgba(0,0,0,0.05); 
 }
 
-h1 { text-align: center; color: #ff85a1; margin-bottom: 5px; }
+h1 { text-align: center; color: var(--line-pink); margin-bottom: 5px; }
 .subtitle { text-align: center; color: #888; margin-bottom: 20px; font-size: 0.9em; }
 
 /* Botones */
@@ -29,49 +32,68 @@ button#btnGenerar, button#btnDescargar {
   padding: 15px; font-weight: bold; font-size: 1.1em; transition: 0.3s;
   margin-bottom: 10px;
 }
-
 button#btnGenerar { background: var(--blue); color: #444; }
 button#btnDescargar { background: var(--dark); color: white; }
 
-button:active { transform: scale(0.98); }
-
-/* Grid de tarjetas */
+/* GRID: Organizado para que respire */
 .grid-semana { 
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-  gap: 15px; margin-top: 20px; 
-  padding: 10px; /* Espacio para que la foto no salga cortada */
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+  gap: 20px; 
+  margin-top: 25px;
 }
 
+/* TARJETA: Recuperando el diseño ordenado */
 .dia-card { 
-  position: relative; border: 2px solid #f0f0f0; border-radius: 15px; 
-  padding: 15px; background: #fff; cursor: pointer; transition: 0.2s;
+  position: relative; 
+  border: 1px solid #eee; 
+  border-radius: 15px; 
+  padding: 20px; 
+  background: #fff; 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  cursor: pointer;
 }
 
-.dia-card:hover { border-color: var(--pink); transform: translateY(-3px); }
-
-.btn-refresh-dia {
-  position: absolute; top: 10px; right: 10px; background: var(--pink);
-  color: white; border: none; border-radius: 50%; width: 30px; height: 30px;
-  display: flex; align-items: center; justify-content: center; z-index: 10;
-}
-
+/* LA LÍNEA ROSA QUE SE HABÍA PERDIDO */
 .dia-nombre { 
-  font-weight: bold; color: var(--dark); border-bottom: 2px solid var(--pink); 
-  margin-bottom: 10px; display: block; text-align: center; padding-right: 20px;
+  font-weight: bold; 
+  font-size: 1.1em;
+  color: var(--dark); 
+  border-bottom: 2px solid var(--pink); 
+  margin-bottom: 15px; 
+  display: block; 
+  text-align: center; 
+  padding-bottom: 5px;
+  padding-right: 25px; /* Espacio para el botón refresh */
 }
 
-.item { font-size: 0.85em; margin: 10px 0; display: flex; align-items: center; gap: 8px; }
+/* ITEMS: Alineados y con aire */
+.item { 
+  font-size: 0.95em; 
+  margin: 12px 0; 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  line-height: 1.3;
+}
 
-/* MODAL DE RECETA */
+.item span { font-size: 1.2em; width: 25px; text-align: center; }
+
+/* Botón Refresh mini */
+.btn-refresh-dia {
+  position: absolute; top: 15px; right: 15px; background: var(--pink);
+  color: white; border: none; border-radius: 50%; width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center; z-index: 10;
+  font-size: 0.8em;
+}
+
+/* MODAL */
 .modal-receta {
   display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
   background: rgba(0,0,0,0.8); z-index: 1000; align-items: center; justify-content: center;
 }
-
 .modal-content {
   background: white; padding: 30px; border-radius: 25px; width: 85%; 
-  max-width: 400px; text-align: center; position: relative;
+  max-width: 400px; text-align: left; position: relative;
 }
-
 .btn-cerrar { position: absolute; top: 10px; right: 15px; font-size: 30px; cursor: pointer; color: #aaa; }
-#pasosReceta { color: #666; line-height: 1.5; margin-top: 15px; text-align: left; }
