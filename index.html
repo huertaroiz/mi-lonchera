@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunchera Select Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>🍱 Lunchera Select Pro</h1>
+        <p class="subtitle">Planeador Inteligente (2-2-1)</p>
+        
+        <button id="btnGenerar">🎲 Generar Toda la Semana</button>
+        <button id="btnDescargar">📸 Guardar Menú como Imagen</button>
+        
+        <div class="grid-semana" id="grid"></div>
+    </div>
+
+    <div id="modalReceta" class="modal-receta">
+        <div class="modal-content">
+            <span class="btn-cerrar" onclick="cerrarReceta()">&times;</span>
+            <h2 id="tituloReceta"></h2>
+            <div id="cuerpoReceta">
+              <p id="pasosReceta"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>
