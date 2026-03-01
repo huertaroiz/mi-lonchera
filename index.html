@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunchera Select Pro</title>
     <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
     <div class="container">
-        <h1>🍱 Mi Lonchera</h1>
-        <p class="subtitle">Planeador semanal </p>
+        <h1>🍱 Lunchera Select Pro</h1>
+        <p class="subtitle">Planeador Inteligente (2-2-1)</p>
         
-        <button id="btnGenerar">🎲 Generar Toda la Semana</button>
-        <button id="btnDescargar">📸 Guardar Menú como Imagen</button>
+        <div class="controles">
+            <button id="btnGenerar">🎲 Generar Toda la Semana</button>
+            <button id="btnDescargar">📸 Guardar Menú como Imagen</button>
+        </div>
         
         <div class="grid-semana" id="grid"></div>
     </div>
@@ -28,8 +32,6 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    
     <script src="script.js"></script>
 </body>
 </html>
