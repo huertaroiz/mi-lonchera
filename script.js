@@ -111,3 +111,21 @@ function generarSemana() {
 
 document.getElementById('btnGenerar').addEventListener('click', generarSemana);
 window.onload = generarSemana;
+// --- FUNCIÓN PARA TOMAR LA FOTO ---
+document.getElementById('btnDescargar').addEventListener('click', function() {
+    const grid = document.getElementById('grid');
+    
+    // Usamos la librería html2canvas para convertir el div en imagen
+    html2canvas(grid, {
+        backgroundColor: "#f8f9fa", // Color de fondo de la foto
+        scale: 2, // Mayor calidad
+        logging: false,
+        useCORS: true
+    }).then(canvas => {
+        // Creamos un enlace invisible para descargar la imagen
+        const link = document.createElement('a');
+        link.download = 'Menu-Semanal-Lunchera.png';
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+    });
+});
